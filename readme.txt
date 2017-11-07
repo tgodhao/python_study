@@ -1,0 +1,1 @@
+This is my study python all docs,I will update every day.
