@@ -7,13 +7,13 @@ class AttrDisplay:
 	itself (but not attrs inherited from its classes). Can be mixed into any class, and
 	will work on any instance.
 	"""
-	def gatherAttrs(self):
+	def __gatherAttrs(self):
 		attrs = []
 		for key in sorted(self.__dict__):
 			attrs.append('%s=%s' %(key,getattr(self,key)))
 		return ','.join(attrs)
 	def __str__(self):
-		return '[%s:%s]' %(self.__class__.__name__,self.gatherAttrs())
+		return '[%s:%s]' %(self.__class__.__name__,self.__gatherAttrs())
 if __name__=='__main__':
 	class TopTest(AttrDisplay):
 		count = 0
